@@ -7,7 +7,7 @@ export const conectarDB = () => {
   return mongoose
     .connect(urlDatabase)
     .then(() => {
-      console.log("Conectado a la DB Vivero!");
+      console.log("Conectado a la DB PatoFelting!");
     })
     .catch((error) => {
       console.log("Error conectando a la DB: ", error);
