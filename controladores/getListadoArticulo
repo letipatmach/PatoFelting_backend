@@ -1,0 +1,10 @@
+import { ModeloArticulo } from "../database/";
+import { RespuestaArticulo } from "../respuesta/RespuestaArticulo.js";
+import { RespuestaServidor } from "../respuesta/RespuestaServidor.js";
+
+
+export const getListadoPlanta = (req, res, next) => {
+  const filtroCategoria = crearFiltroPlanta(req.query.categoria);
+  const filtroNombrePlanta = crearFiltroPlanta(req.query.nombre);
+  const ordenarPorNombrePlanta = crearOrdenadorPlanta(req.query.ordenarPorNombrePlanta);
+  const ordenarPorCategoria = crearOrdenadorPlanta(req.query.ordenarPorCategoria);
