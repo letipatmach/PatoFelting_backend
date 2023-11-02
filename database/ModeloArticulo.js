@@ -8,7 +8,7 @@ const schemaArticulo = new Schema({
     nombre: {type: String, required: [true, "Nombre es requerido"],   unique: true,    },
     precio: { type: Number, required: [true, "Precio es requerido"] },
     novedad: { type: Boolean, required: [true, "Novedad es requerido"] },
-    descuento: { type: Boolean, required: [true, "descuento es requerido"] },
+    descuento: { type: Boolean, required: [true, "Descuento es requerido"] },
     porcentajeDto:{ type: Number, required: [true, "Porcentaje es requerido"] },
     Descripcion:{ type: String, required: [true, "Descripcion es requerida"] },
     imagenPorDefecto: { type: String },
