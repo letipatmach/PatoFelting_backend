@@ -5,7 +5,9 @@ import cors from "cors";
 import { conectarDB } from "./database/conexion.js";
 import { manejarErrores } from "./middlewares/manejarErrores.js";
 import { mostrarDatosRequest } from "./middlewares/mostrarDatosRequest.js";
+import{getListadoArticulo} from "./controladores/getListadoArticulo.js"
 
+ 
 
 //me conecto a mi BD
 await conectarDB();
@@ -19,8 +21,12 @@ app.use(cors());
 app.use(bodyParser.json());
 app.use(mostrarDatosRequest);
 
-//-------------------------------------------------ENDPOINT------------------------------------------------------------------------------
 
+
+
+//-------------------------------------------------ENDPOINT------------------------------------------------------------------------------
+//muestro listado de artículos
+app.get("/listaArticulos", getListadoArticulo);
 
 
 

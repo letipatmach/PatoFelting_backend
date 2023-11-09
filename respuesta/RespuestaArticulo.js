@@ -5,18 +5,18 @@ export class RespuestaArticulo {
   precio;
   novedad;
   descuento;
-  pocentajeDto;
+  porcentajeDto;
   descripcion;
   imagenPorDefecto;
 
   constructor(
-    idArticulo = 0,
+    idArticulo = number,
     categoria = "",
     nombre = "",
-    precio = "",
-    novedad = false,
-    descuento = false,
-    pocentajeDto = 0,
+    precio = number,
+    novedad = "",
+    descuento = "",
+    porcentajeDto = number,
     descripcion = "",
     imagenPorDefecto = ""
   ) {
@@ -26,7 +26,7 @@ export class RespuestaArticulo {
     this.precio = precio;
     this.novedad = novedad;
     this.descuento = descuento;
-    this.pocentajeDto = pocentajeDto;
+    this.porcentajeDto = porcentajeDto;
     this.descripcion = descripcion;
     this.imagenPorDefecto = imagenPorDefecto;
   }
