@@ -6,7 +6,7 @@ import { RespuestaServidor } from "../respuesta/RespuestaServidor.js";
 
 
 export const getListadoArticulo = (req, res, next) => {
-console.log("funcion listado articulo")
+
   ModeloArticulo.find()
     .then((data) => {
       const articulo = data.map(
