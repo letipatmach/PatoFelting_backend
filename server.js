@@ -6,6 +6,7 @@ import { conectarDB } from "./database/conexion.js";
 import { manejarErrores } from "./middlewares/manejarErrores.js";
 import { mostrarDatosRequest } from "./middlewares/mostrarDatosRequest.js";
 import{getListadoArticulo} from "./controladores/getListadoArticulo.js"
+import { getNovedades } from './controladores/getNovedades.js';
 
  
 
@@ -27,6 +28,8 @@ app.use(mostrarDatosRequest);
 //-------------------------------------------------ENDPOINT------------------------------------------------------------------------------
 //muestro listado de artículos
 app.get("/listaArticulos", getListadoArticulo);
+//muestro artículos en novedades
+app.get("/novedades", getNovedades);
 
 
 
