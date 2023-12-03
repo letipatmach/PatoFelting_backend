@@ -7,6 +7,9 @@ import { manejarErrores } from "./middlewares/manejarErrores.js";
 import { mostrarDatosRequest } from "./middlewares/mostrarDatosRequest.js";
 import{getListadoArticulo} from "./controladores/getListadoArticulo.js"
 import { getNovedades } from './controladores/getNovedades.js';
+import { getOfertas } from './controladores/getOfertas.js';
+import {getCategorias} from './controladores/getCategorias.js';
+import { getDetalleArticulo } from './controladores/getDetalleArticulo.js';
 
  
 
@@ -26,10 +29,19 @@ app.use(mostrarDatosRequest);
 
 
 //-------------------------------------------------ENDPOINT------------------------------------------------------------------------------
-//muestro listado de artículos
-app.get("/listaArticulos", getListadoArticulo);
+
 //muestro artículos en novedades
 app.get("/novedades", getNovedades);
+//muestro articulos de oferta
+app.get("/ofertas", getOfertas);
+//muestro categorias
+app.get("/categorias", getCategorias);
+//muestro listado de artículos
+app.get("/listaArticulos", getListadoArticulo);
+
+//muestro detalle articulo
+app.get("/detalleArticulo", getDetalleArticulo);
+
 
 
 
