@@ -6,29 +6,29 @@ import { RespuestaServidor } from "../respuesta/RespuestaServidor.js";
 
 
 export const getDetalleArticulo = (req, res, next) => {
+  const idArticulo = Number(req.params.idArticulo);
 
-  ModeloArticulo.find({idArticulo:1})
+  ModeloArticulo.findOne({ idArticulo: idArticulo })
     .then((data) => {
-      const articulo = data.map(
-        (c) =>
-          new RespuestaArticulo(
-            c.idArticulo,
-             c.categoria,
-            c.nombre,
-            c.precio,
-            c.novedad,
-            c.descuento,
-            c.porcentajeDto,
-            c.descripcion,
-            c.imagenPorDefecto,
-            
-          )
+      if (!data) {
+        throw Error(`No existe una Planta con el ID ${idPlanta}`);
+      }
+
+      const articulo = new RespuestaArticulo(
+        data.idArticulo,
+		data.categoria,
+		data.nombre,
+		data.precio,
+		data.novedad,
+		data.descuento,
+		data.porcentajeDto,
+		data.descripcion,
+		data.imagenPorDefecto
       );
+
       return res.json(new RespuestaServidor(articulo));
     })
-    .catch((error) => {
-      next(error);
-    });
+    .catch(next);
 };
 
 

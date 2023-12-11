@@ -40,7 +40,7 @@ app.get("/categorias", getCategorias);
 app.get("/listaArticulos", getListadoArticulo);
 
 //muestro detalle articulo
-app.get("/detalleArticulo", getDetalleArticulo);
+app.get("/detalleArticulo/:idArticulo", getDetalleArticulo);
 
 
 
