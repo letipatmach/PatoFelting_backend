@@ -11,7 +11,8 @@ import { getOfertas } from './controladores/getOfertas.js';
 import {getCategorias} from './controladores/getCategorias.js';
 import { getDetalleArticulo } from './controladores/getDetalleArticulo.js'; 
 import { getListadoSugerencia } from './controladores/getListadoSugerencia.js';
-import { getListadoImagen } from './controladores/getlistadoImagen.js'; 
+import { getListadoImagen } from './controladores/getlistadoImagen.js';
+//sincronizando de nuevo a ver si funciona 
  
 
 //me conecto a mi BD
