@@ -6,7 +6,8 @@ import { crearFiltroArticulo } from "../utiles.js";
 
 
 
-export const getListadoArticulo = (req, res, next) => {
+export const getListadoSugerencia = (req, res, next) => {
+  /*
   const filtroCategoria = crearFiltroArticulo(req.query.categoria);
   const filtroPrecioMininmo = req.query.precioMinimo;
   const filtroPrecioMaximo = req.query.precioMaximo;
@@ -32,15 +33,13 @@ if(filtroPrecioMininmo && filtroPrecioMaximo){
   filtros.precio ={ $lte: filtroPrecioMaximo}
 }else{
   console.log("NO Existen  precios")
-}
-
-
-
-
-
 console.log("Filtros"+filtros)
+*/
 
-  ModeloArticulo.find(filtros)
+  ModeloArticulo.aggregate ([
+    { $match: { categoria: "Personajes" } },
+    { $sample: {size:4}}
+  ])
     .then((data) => {
       const articulo = data.map(
         (c) =>

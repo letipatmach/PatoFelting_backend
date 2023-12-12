@@ -5,12 +5,13 @@ import cors from "cors";
 import { conectarDB } from "./database/conexion.js";
 import { manejarErrores } from "./middlewares/manejarErrores.js";
 import { mostrarDatosRequest } from "./middlewares/mostrarDatosRequest.js";
-import{getListadoArticulo} from "./controladores/getListadoArticulo.js"
+import {getListadoArticulo} from "./controladores/getListadoArticulo.js"
 import { getNovedades } from './controladores/getNovedades.js';
 import { getOfertas } from './controladores/getOfertas.js';
 import {getCategorias} from './controladores/getCategorias.js';
 import { getDetalleArticulo } from './controladores/getDetalleArticulo.js';
-
+import { getListadoImagen } from './controladores/getlistadoImagen.js';
+import { getListadoSugerencia } from './controladores/getListadoSugerencia.js';
  
 
 //me conecto a mi BD
@@ -41,10 +42,11 @@ app.get("/listaArticulos", getListadoArticulo);
 
 //muestro detalle articulo
 app.get("/detalleArticulo/:idArticulo", getDetalleArticulo);
-
-
-
-
+//muestro listado de imagenes
+app.get("/listaImagen", getListadoImagen);
+//muestro listado de Sugerencia
+app.get("/sugerencia", getListadoSugerencia);
+ 
 
 
 
