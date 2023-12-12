@@ -10,6 +10,7 @@ import { getNovedades } from './controladores/getNovedades.js';
 import { getOfertas } from './controladores/getOfertas.js';
 import {getCategorias} from './controladores/getCategorias.js';
 import { getDetalleArticulo } from './controladores/getDetalleArticulo.js';
+//import { getListadoImagen } from './controladores/getlistadoImagen.js';
 import { getListadoImagen } from './controladores/getlistadoImagen.js';
 import { getListadoSugerencia } from './controladores/getListadoSugerencia.js';
  
