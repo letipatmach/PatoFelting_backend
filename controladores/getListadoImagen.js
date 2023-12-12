@@ -5,7 +5,7 @@ import { RespuestaServidor } from "../respuesta/RespuestaServidor.js";
 
 
 
-export const getListadoImagen = (req, res, next) => {
+export const getListadoImagen= (req, res, next) => {
 
   const filtroidArticulo = req.query.idArticulo;
   const filtros = {};

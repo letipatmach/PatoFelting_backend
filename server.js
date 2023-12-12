@@ -9,10 +9,9 @@ import {getListadoArticulo} from "./controladores/getListadoArticulo.js"
 import { getNovedades } from './controladores/getNovedades.js';
 import { getOfertas } from './controladores/getOfertas.js';
 import {getCategorias} from './controladores/getCategorias.js';
-import { getDetalleArticulo } from './controladores/getDetalleArticulo.js';
-//import { getListadoImagen } from './controladores/getlistadoImagen.js';
-import { getListadoImagen } from './controladores/getlistadoImagen.js';
+import { getDetalleArticulo } from './controladores/getDetalleArticulo.js'; 
 import { getListadoSugerencia } from './controladores/getListadoSugerencia.js';
+import { getListadoImagen } from './controladores/getlistadoImagen.js'; 
  
 
 //me conecto a mi BD
