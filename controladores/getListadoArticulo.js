@@ -54,6 +54,7 @@ console.log("Filtros"+filtros)
             c.porcentajeDto,
             c.descripcion,
             c.imagenPorDefecto,
+            c.altura
             
           )
       );

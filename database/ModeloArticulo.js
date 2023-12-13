@@ -11,7 +11,8 @@ const schemaArticulo = new Schema({
     descuento:        { type: String,  required: [true, "Descuento es requerido"  ] },
     porcentajeDto:    { type: Number,  required: [true, "Porcentaje es requerido" ] },
     descripcion:      { type: String,  required: [true, "Descripcion es requerida"] },
-    imagenPorDefecto: { type: String , required: [true, "Imagen es requerida"] }
+    imagenPorDefecto: { type: String , required: [true, "Imagen es requerida"] },
+    altura:           { type: String , required: [true, "Altura es requerida"] }
    
   
   });

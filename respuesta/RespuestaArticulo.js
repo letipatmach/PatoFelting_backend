@@ -8,17 +8,19 @@ export class RespuestaArticulo {
   porcentajeDto;
   descripcion;
   imagenPorDefecto;
+  altura;
 
   constructor(
-    idArticulo = number,
+    idArticulo = "",
     categoria = "",
     nombre = "",
-    precio = number,
+    precio = "",
     novedad = "",
     descuento = "",
-    porcentajeDto = number,
+    porcentajeDto = "",
     descripcion = "",
-    imagenPorDefecto = ""
+    imagenPorDefecto = "",
+    altura=""
   ) {
     this.idArticulo = idArticulo;
     this.categoria = categoria;
@@ -29,5 +31,6 @@ export class RespuestaArticulo {
     this.porcentajeDto = porcentajeDto;
     this.descripcion = descripcion;
     this.imagenPorDefecto = imagenPorDefecto;
+    this.altura = altura;
   }
 }
