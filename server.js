@@ -18,6 +18,8 @@ import { postSalirUsu} from './controladores/postSalirUsu.js';
 import { controlarSesion } from './middlewares/controlarSesion.js';
 import { postllenarCarrito } from './controladores/postllenarCarrito.js'; 
 import { getDetalleCarrito } from './controladores/getDetalleCarrito.js';
+import { deleteArtCarrito } from './controladores/deleteArtCarrito.js';
+import { postlCheckout } from './controladores/postCheckout.js';
 //sincronizando de nuevo a ver si funciona cambio nombre archivo
  
 
@@ -69,7 +71,10 @@ app.get("/sugerencia", getListadoSugerencia);
 app.post("/llenarCarrito", postllenarCarrito);
 //Cargo Carrito
 app.get("/carrito/:codigoVta", getDetalleCarrito);
-
+//Elimino una Carrito determinada
+app.delete("/borrararticulocarrito/:idCarrito", deleteArtCarrito);
+//Cargar Checkout
+app.post("/checkout",postlCheckout)
 
 
  
