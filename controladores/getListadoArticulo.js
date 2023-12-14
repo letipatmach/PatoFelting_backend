@@ -7,32 +7,48 @@ import { crearFiltroArticulo } from "../utiles.js";
 
 
 export const getListadoArticulo = (req, res, next) => {
-  const filtroCategoria = crearFiltroArticulo(req.query.categoria);
+  const filtroCategoria     = crearFiltroArticulo(req.query.categoria);
   const filtroPrecioMininmo = req.query.precioMinimo;
-  const filtroPrecioMaximo = req.query.precioMaximo;
+  const filtroPrecioMaximo  = req.query.precioMaximo;
+  const filtroTamano        = req.query.filtroTamano;
+  const filtroDescuento        = req.query.filtroDescuento;
   console.log("Llega Categoria"+req.query.categoria)  
   console.log("Llega Precio Minimo"+req.query.precioMinimo)
   console.log("Llega Precio MAximo"+req.query.precioMaximo)
- 
+  console.log("Llega Tamano"+req.query.filtroTamano)
+  console.log("Llega Descuento"+req.query.filtroDescuento)
+  
 
   const filtros = {};
+  //--- Filtro Categoria
   if (filtroCategoria) {
     filtros.categoria =filtroCategoria;
   }
 
+  //---- Filtros Precios
+  if(filtroPrecioMininmo && filtroPrecioMaximo){
+    console.log("Existen ambos precios")
+    filtros.precio ={ $gte: filtroPrecioMininmo, $lte: filtroPrecioMaximo}
+  }else if( filtroPrecioMininmo ){
+    console.log("Existe precio Minimo")
+    filtros.precio ={ $gte: filtroPrecioMininmo }
+  }else if( filtroPrecioMaximo ){
+    console.log("Existe precio Maximo")
+    filtros.precio ={ $lte: filtroPrecioMaximo}
+  }else{
+    console.log("NO Existen  precios")
+  }
 
-if(filtroPrecioMininmo && filtroPrecioMaximo){
-  console.log("Existen ambos precios")
-  filtros.precio ={ $gte: filtroPrecioMininmo, $lte: filtroPrecioMaximo}
-}else if( filtroPrecioMininmo ){
-  console.log("Existe precio Minimo")
-  filtros.precio ={ $gte: filtroPrecioMininmo }
-}else if( filtroPrecioMaximo ){
-  console.log("Existe precio Maximo")
-  filtros.precio ={ $lte: filtroPrecioMaximo}
-}else{
-  console.log("NO Existen  precios")
-}
+    //--- Filtro Tamaño
+    if (filtroTamano) {
+      filtros.altura =filtroTamano;
+    }
+
+    //--- Filtro Tamaño
+    if (filtroDescuento) {
+      filtros.descuento =filtroDescuento;
+    }
+
 
 
 

@@ -7,8 +7,10 @@ import { RespuestaServidor } from "../respuesta/RespuestaServidor.js";
 
 export const getOfertas = (req, res, next) => {
 
-  ModeloArticulo.find({descuento:true})
-    .then((data) => {
+  ModeloArticulo.aggregate ([
+    { $match: { descuento: "true" } },
+    { $sample: {size:3}}
+  ])   .then((data) => {
       const articulo = data.map(
         (c) =>
           new RespuestaArticulo(

@@ -7,7 +7,15 @@ import { RespuestaServidor } from "../respuesta/RespuestaServidor.js";
 
 export const getNovedades = (req, res, next) => {
 
-  ModeloArticulo.find({novedad:true})
+  ModeloArticulo.aggregate ([
+    { $match: { novedad: "true" } },
+    { $sample: {size:4}}
+  ])  
+  
+  
+  
+  
+  // find({novedad:true})
     .then((data) => {
       const articulo = data.map(
         (c) =>

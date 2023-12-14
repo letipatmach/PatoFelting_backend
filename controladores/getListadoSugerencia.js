@@ -35,9 +35,10 @@ if(filtroPrecioMininmo && filtroPrecioMaximo){
   console.log("NO Existen  precios")
 console.log("Filtros"+filtros)
 */
-
+const idArticulo = Number(req.params.idArticulo); 
   ModeloArticulo.aggregate ([
-    { $match: { categoria: "Personajes" } },
+   
+    { $match: { idArticulo: { $ne: idArticulo } } },
     { $sample: {size:4}}
   ])
     .then((data) => {
